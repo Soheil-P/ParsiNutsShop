@@ -1,0 +1,32 @@
+{% extends 'panelbase.html' %} {% block content %}
+<div
+  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2">مدیریت شهر ها</h1>
+</div>
+{% comment %}
+<h2>شهر ها</h2>
+{% endcomment %}
+<a class="btn btn-info"  href={% url 'city-add-page' %}>افزودن</a>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th class="col-19">عنوان</th>
+        <th class="col-3 px-5 ">عملیات</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for city in cities %}
+      <tr>
+        <td>{{city.title}}</td>
+        <td>
+          <a class="btn btn-danger" href={% url 'city-delete-page' city.pk  %}>حذف</a>
+          <a class="btn btn-success mx-2" href={% url 'city-edit-page' city.pk  %}>ویرایش</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

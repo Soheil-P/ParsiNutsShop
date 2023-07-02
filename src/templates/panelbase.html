@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href={% static 'css/panelbase.css' %}>
+    <link rel="stylesheet" href={% static 'bootstrap-5.3.0-dist/css/bootstrap.rtl.min.css' %}>
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+    
+</head>
+<body>
+
+    <header
+      class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 mx-3 px-5" href={% url 'index-page' %}>فروشگاه آجیل و خشکبار (پنل مدیریت)</a
+      >
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label=""
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-5 mx-3 active" href="#">خروج</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href={% url 'city-list-page' %}>
+                  شهر ها
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  دسته بندی محصولات
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  محصولات
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  انبار
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  موجودی انبار ها
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  مشتریان
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  فروش
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        {% block content %}
+        برای مشاهده یکی از موارد را از منو انتخاب کنید
+        {% endblock content %}
+        </main>
+      </div>
+    </div>
+    <script src={%static 'bootstrap-5.3.0-dist/js/bootstrap.min.js'%}></script>
+</body>
+</html>

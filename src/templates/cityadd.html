@@ -1,0 +1,10 @@
+{% extends 'panelbase.html' %}
+{% block content %}
+
+<form class="m-3" method="post" >
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="ذخیره">
+</from>
+
+{% endblock content %}

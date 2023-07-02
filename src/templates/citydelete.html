@@ -1,0 +1,11 @@
+{% extends 'panelbase.html' %}
+
+{% block content %}
+
+<form class="m-3" method="post" >
+    {% csrf_token %}
+    آیا از حذف {{ city.title }} مطمئن هستید
+    <input type="submit" value="بله">
+</from>
+
+{% endblock content %}
